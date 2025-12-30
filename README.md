@@ -46,7 +46,11 @@ CKD adalah singkatan dari Chronic Kidney Disease atau Penyakit Ginjal Kronis, ya
 4. Pola hidup sehat untuk pencegahan dan manajemen. <br>
 
 # EKSPLORASI DATA
-1. Menampilkan data <br>
+1. Memasukkan dataset kedalam database <br>
+   Saya memilih menggunakan SQL Server karena proses pengolahan query yang lebih mudah. Dataset yang diperoleh berbentuk file .csv yang akan di impor kedalam database. Pada database yang telah dibuat, cukup klik kanan --> Task --> Import Data. Pilih datasource berasal dari flatfilesource (atau bisa disesuaikan dengan dataset yang dimiliki) lalu masukkan file nya. File akan tergenerate menjadi sebuah tabel dalam database. <br>
+   <img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/5306386d-6e45-4249-a789-a8920d50ee76" />
+
+2. Menampilkan data <br>
 ```
 SELECT TOP (1000) [patient_age]
       ,[gender]
@@ -88,6 +92,15 @@ SELECT TOP (1000) [patient_age]
   FROM [Drug].[dbo].[NephrotoxicDrug];
 ```
 <img width="1751" height="568" alt="image" src="https://github.com/user-attachments/assets/51305035-b410-412c-9632-19f82f432fe7" />
+
+2. Melihat tipe data <br>
+   Tipe data dapat dilihat melalui design table. Semula, tipe data akan menyesuaikan dengan format dataset. Namun dapat diubah tergantung kebutuhan pengolahan data. Tipe data dapat diubah melalui GUI atau Query. Jika ingin merubah tipe data menggunakan query, dapat menggunakan script berikut:<br>
+   ```
+    ALTER Table NephrotoxicDrug <br>
+    ALTER COLUMN patient_age INT;
+  ``
+   <img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/44f377c0-5e58-4a1c-a582-89ce5cdb5dc7" /> <br>
+   
 
 
 
